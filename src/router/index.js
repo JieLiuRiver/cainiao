@@ -1,15 +1,44 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/components/Index/Index'
 
 Vue.use(Router)
+
+const Index = (resolve) => {
+  import('@/components/Index/Index').then((module) => {
+    resolve(module)
+  })
+}
+
+
+const Homeh5 = (resolve) => {
+  import('@/components/CHomeh5/CHomeh5').then((module) => {
+    resolve(module)
+  })
+}
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Index',
-      component: Index
+      redirect: '/homeh5'
+    },
+    {
+      path: '/homeh5',
+      component: Homeh5,
+      name: 'Homeh5'
+    },
+    {
+      path: '/index',
+      component: Index,
+      name: 'Index'
+      /*
+      children: [
+        {
+          path: ':id',
+          component: Disc
+        }
+      ]
+      */
     }
   ]
 })

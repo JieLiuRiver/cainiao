@@ -53,8 +53,20 @@ html
 .f-p0
   padding: 0
 
+.f-h-full
+  height: 100%
+ 
+.f-w-full
+  width: 100% 
+
 .f-m0
   margin: 0    
+
+.f-ellipsis
+  overflow:hidden
+  white-space:nowrap
+  text-overflow:ellipsis
+  word-wrap:normal  
 
 /*====================  方法函数  =======================*/
 full = 100
@@ -78,3 +90,60 @@ body
 bg-pos($x, $y)
   background-repeat: no-repeat
   r3(background-position, $x, $y)
+  
+.slide-enter-active, .slide-leave-active 
+    transition: .4s all
+    transform: translate3d(0, 0, 0)
+    -webkit-transform: translate3d(0, 0, 0)
+.slide-enter, .slide-leave-active
+    transform: translate3d(-100%, 0, 0)
+    -webkit-transform: translate3d(-100%, 0, 0)
+    
+
+.animated.infinite
+  animation-duration: 1s
+  animation-fill-mode: both
+  animation-iteration-count: infinite
+  
+@keyframes rotate
+  from 
+    transform: scale(1.1) rotateZ(0deg)
+  
+  50%
+    transform: scale(.8) rotateZ(180deg)
+
+  100% 
+    transform: scale(1.1) rotateZ(360deg)
+
+
+@-webkit-keyframes rotate
+  from 
+    transform: scale(1.1) rotateZ(0deg)
+  
+  50%
+    transform: scale(.8) rotateZ(180deg)
+
+  100% 
+    transform: scale(1.1) rotateZ(360deg)    
+
+
+@keyframes textanimate
+  from 
+    transform: translate3d(0, 50%, 0)
+    opacity: 0
+
+  100% 
+    transform: translate3d(0, 0, 0)
+    opacity: 1
+    
+
+@keyframes fade
+  from 
+    opacity: 0
+
+  100% 
+    opacity: 1
+
+
+
+
