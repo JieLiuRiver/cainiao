@@ -20,7 +20,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/homeh5'
+      redirect: '/index'
     },
     {
       path: '/homeh5',
